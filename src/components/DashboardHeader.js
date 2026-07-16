@@ -12,10 +12,15 @@ import { Colors } from '../constants/colors';
  *   data  { greeting, location, weatherSummary }
  *   onNotificationPress  function
  */
-export default function DashboardHeader({ data, onNotificationPress }) {
+export default function DashboardHeader({ data, onNotificationPress, onBack }) {
   return (
     <View style={styles.container}>
       <View style={styles.topRow}>
+        {onBack && (
+          <TouchableOpacity style={styles.backBtn} onPress={onBack} activeOpacity={0.7}>
+            <Text style={styles.backIcon}>←</Text>
+          </TouchableOpacity>
+        )}
         <View style={styles.textBlock}>
           <Text style={styles.greeting}>{data.greeting}</Text>
           <View style={styles.locationRow}>
@@ -116,5 +121,26 @@ const styles = StyleSheet.create({
     fontSize: 13,
     fontWeight: '600',
     color: Colors.text,
+  },
+  backBtn: {
+    width: 40,
+    height: 40,
+    borderRadius: 20,
+    backgroundColor: Colors.white,
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderWidth: 1,
+    borderColor: '#EBEBEB',
+    shadowColor: Colors.black,
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.04,
+    shadowRadius: 4,
+    elevation: 1,
+    marginRight: 12,
+  },
+  backIcon: {
+    fontSize: 18,
+    color: Colors.primary,
+    fontWeight: 'bold',
   },
 });

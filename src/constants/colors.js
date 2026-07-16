@@ -6,4 +6,10 @@ export const Colors = {
   white: "#FFFFFF",
   black: "#212121",
   text: "#424242",
+  // Farmer-themed rich colors
+  farmGreen: "#1B5E20",
+  lightFarmGreen: "#E8F5E9",
+  wheatGold: "#FFB74D",
+  earthBrown: "#8D6E63",
+  lightWarmBeige: "#FFF8E1",
 };
